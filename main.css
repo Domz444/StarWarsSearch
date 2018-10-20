@@ -1,0 +1,87 @@
+html{
+    box-sizing: border-box;
+    font-family:'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+}
+body{
+    /* background-image: url("wallhaven-213495.jpg");
+    /* background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background-color: black;
+}
+@keyframes changePosition {
+    from {
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    animation-duration: 3s;
+  animation-name: changePosition;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  }
+
+#logoContainer{
+    text-align: center;
+}
+.logo{
+    height: 100px;
+}
+input.search {
+    margin: 0;
+    text-align: center;
+    outline:0;
+    border: 10px solid #F7F7F7;
+    width: 100%;
+    position: relative;
+    top: 10px;
+    z-index: 2;
+    border-radius: 5px;
+    font-size: 40px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+  }
+
+.search-form {
+    max-width:400px;
+    margin:50px auto;
+  }
+.starwars{
+    text-align: center;
+}
+#person{
+    color:white;
+}
+.suggestions li {
+    background:white;
+    list-style: none;
+    border-bottom: 1px solid #D8D8D8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+    margin:0;
+    padding:20px;
+    transition:background 0.2s;
+    display:flex;
+    justify-content:space-between;
+    text-transform: capitalize;
+  }
+
+  .suggestions li:nth-child(even) {
+    background: linear-gradient(to bottom,  #ffffff 0%,#EFEFEF 100%);
+  }
+  .suggestions li:nth-child(odd) {
+    background: linear-gradient(to top,  #ffffff 0%,#EFEFEF 100%);
+  }
+  .hl {
+    background:#ffc600;
+  }
+  span.dob{
+    font-size: 15px;
+  }
