@@ -7,7 +7,8 @@ const characters = [
     skin_color: "gold",
     eye_color: "yellow",
     birth_year: "112BBY",
-    gender: "n/a"
+    gender: "n/a",
+    id: "one"
   },
   {
     name: "Luke Skywalker",
@@ -17,7 +18,8 @@ const characters = [
     skin_color: "fair",
     eye_color: "blue",
     birth_year: "19BBY",
-    gender: "male"
+    gender: "male",
+    id: "two"
   },
   {
     name: "R2-D2",
@@ -27,7 +29,8 @@ const characters = [
     skin_color: "white, blue",
     eye_color: "red",
     birth_year: "33BBY",
-    gender: "n/a"
+    gender: "n/a",
+    id: "three"
   },
   {
     name: "Darth Vader",
@@ -37,7 +40,8 @@ const characters = [
     skin_color: "white",
     eye_color: "yellow",
     birth_year: "41.9BBY",
-    gender: "male"
+    gender: "male",
+    id: "four"
   },
   {
     name: "Leia Organa",
@@ -47,7 +51,8 @@ const characters = [
     skin_color: "light",
     eye_color: "brown",
     birth_year: "19BBY",
-    gender: "female"
+    gender: "female",
+    id: "five"
   },
   {
     name: "Boba Fett",
@@ -57,7 +62,8 @@ const characters = [
     skin_color: "fair",
     eye_color: "brown",
     birth_year: "31.5BBY",
-    gender: "male"
+    gender: "male",
+    id: "six"
   },
   {
     name: "Beru Whitesun lars",
@@ -67,7 +73,8 @@ const characters = [
     skin_color: "light",
     eye_color: "blue",
     birth_year: "47BBY",
-    gender: "female"
+    gender: "female",
+    id: "seven"
   },
   {
     name: "Palpatine",
@@ -77,7 +84,8 @@ const characters = [
     skin_color: "pale",
     eye_color: "yellow",
     birth_year: "82BBY",
-    gender: "male"
+    gender: "male",
+    id: "eight"
   },
   {
     name: "Yoda",
@@ -87,7 +95,8 @@ const characters = [
     skin_color: "green",
     eye_color: "brown",
     birth_year: "896BBY",
-    gender: "male"
+    gender: "male",
+    id: "nine"
   },
   {
     name: "Obi-Wan Kenobi",
@@ -97,7 +106,8 @@ const characters = [
     skin_color: "fair",
     eye_color: "blue-gray",
     birth_year: "57BBY",
-    gender: "male"
+    gender: "male",
+    id: "ten"
   },
   {
     name: "Lando Calrissian",
@@ -107,7 +117,8 @@ const characters = [
     skin_color: "dark",
     eye_color: "brown",
     birth_year: "31BBY",
-    gender: "male"
+    gender: "male",
+    id: "eleven"
   },
   {
     name: "Anakin Skywalker",
@@ -117,7 +128,8 @@ const characters = [
     skin_color: "fair",
     eye_color: "blue",
     birth_year: "41.9BBY",
-    gender: "male"
+    gender: "male",
+    id: "twelve"
   },
   {
     name: "Darth Maul",
@@ -127,7 +139,8 @@ const characters = [
     skin_color: "red",
     eye_color: "yellow",
     birth_year: "54BBY",
-    gender: "male"
+    gender: "male",
+    id: "thirteen"
   },
   {
     name: "Mace Windu",
@@ -137,7 +150,8 @@ const characters = [
     skin_color: "dark",
     eye_color: "brown",
     birth_year: "72BBY",
-    gender: "male"
+    gender: "male",
+    id: "fourteen"
   },
   {
     name: "General Grievous",
@@ -147,12 +161,12 @@ const characters = [
     skin_color: "brown, white",
     eye_color: "green, yellow",
     birth_year: "unknown",
-    gender: "male"
+    gender: "male",
+    id: "fifteen"
   }
 ];
 
-// var div = document.querySelector(".starwars");
-// div.innerHTML += `<h1 id="person">${perso.person}</h1>`;
+
 
 function findMatches(wordInput, characters) {
   return characters.filter(perso => {
@@ -171,7 +185,7 @@ function displayMatches() {
         `<span class="hl">${this.value}</span>`
       );
       return `
-            <li>
+            <li id="${perso.id}" onclick="${perso.id}();">
                 <span class="name">${personName}, Height: ${perso.height}cm</span>
                 <span class="dob">D.O.B: ${perso.birth_year}</span>
             </li>
@@ -209,6 +223,26 @@ function getRandomPosition(){
     return [randomX,randomY];
 }
 
-function getHeight(star){
-
+var newView = document.querySelector(".starwars");
+function two(){
+  newView.innerHTML += `
+  <div class="jedi">
+  <h1 class="charTitle">Luke Skywalker</h1>
+  <div class="image-wrapper">
+      <img id="swImage"src="https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_5a38c454_461eebf5.jpeg?region=0%2C0%2C1536%2C864&amp;width=768"
+          class="thumb reserved-ratio" alt="Luke Skywalker">
+  </div>
+  <div class="desc-sizer">
+      <p class="desc">Luke Skywalker was a Tatooine farmboy who rose from humble beginnings to become one of the greatest Jedi the galaxy
+          has ever known. Along with his friends Princess Leia and Han Solo, Luke battled the evil Empire, discovered the
+          truth of his parentage, and ended the tyranny of the Sith. A generation later, the location of the famed Jedi
+          master was one of the galaxy’s greatest mysteries. Haunted by Ben Solo’s fall to evil and convinced the Jedi
+          had to end, Luke sought exile on a distant world, ignoring the galaxy’s pleas for help. But his solitude would
+          be interrupted – and Luke Skywalker had one final, momentous role to play in the struggle between good and evil.</p>
+  </div>
+</div>
+  `;
+  searchInput.value = 'Luke Skywalker';
+  searchInput.addEventListener("focus", displayMatches);
+  searchInput.focus();
 }

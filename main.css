@@ -85,3 +85,20 @@ input.search {
   span.dob{
     font-size: 15px;
   }
+
+  #swImage{
+    max-width: 100%;
+    /* display: block; */
+    height: auto;
+    text-align: center;
+  }
+  p.desc {
+    color: white;
+}
+ul.suggestions {
+    /* margin-left: 0; */
+    padding-inline-start: 10px;
+}
+.charTitle{
+    color: white;
+}
