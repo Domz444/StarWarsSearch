@@ -224,10 +224,11 @@ function getRandomPosition(){
 }
 
 var newView = document.querySelector(".starwars");
+var once = true;
 function two(){
+
   newView.innerHTML += `
   <div class="jedi">
-  <h1 class="charTitle">Luke Skywalker</h1>
   <div class="image-wrapper">
       <img id="swImage"src="https://lumiere-a.akamaihd.net/v1/images/luke-skywalker-main_5a38c454_461eebf5.jpeg?region=0%2C0%2C1536%2C864&amp;width=768"
           class="thumb reserved-ratio" alt="Luke Skywalker">
@@ -245,4 +246,4 @@ function two(){
   searchInput.value = 'Luke Skywalker';
   searchInput.addEventListener("focus", displayMatches);
   searchInput.focus();
-}
+  }
